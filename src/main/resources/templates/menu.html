@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Principal</title>
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-button {
+            background-color: #1f1f1f;
+            border: 2px solid #444;
+            color: white;
+            padding: 25px 50px;
+            margin: 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 300px;
+        }
+
+        .menu-button i {
+            font-size: 36px;
+            margin-right: 15px;
+        }
+
+        .menu-button:hover {
+            background-color: #333;
+            border-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>MENU PRINCIPAL</h1>
+
+        <form th:action="@{/estudiantes}" method="get">
+            <button class="menu-button" type="submit">
+                <i class="fas fa-user-graduate"></i> Estudiantes
+            </button>
+        </form>
+
+        <form th:action="@{/observaciones}" method="get">
+            <button class="menu-button" type="submit">
+                <i class="fas fa-clipboard-list"></i> Observaciones
+            </button>
+        </form>
+
+        <form th:action="@{/api/observaciones/reporte}" method="get" target="_blank">
+            <button class="menu-button" type="submit">
+                <i class="fas fa-file-pdf"></i> Descargar Reporte PDF
+            </button>
+        </form>
+    </div>
+</body>
+</html>
