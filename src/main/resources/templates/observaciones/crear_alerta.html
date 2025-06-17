@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Alerta Personalizada</title>
+</head>
+<body>
+<h1>Configurar Alerta Personalizada</h1>
+
+<form th:action="@{/alertas/guardar}" method="post">
+    <label>ID del Estudiante:</label>
+    <input type="number" name="estudianteId" required><br><br>
+
+    <label>Número máximo de observaciones (X):</label>
+    <input type="number" name="umbralObservaciones" required><br><br>
+
+    <label>Periodo en días (Y):</label>
+    <input type="number" name="periodoDias" required><br><br>
+
+    <button type="submit">Guardar Alerta</button>
+</form>
+
+<br>
+<a th:href="@{/menu}">Volver al menú</a>
+</body>
+</html>
